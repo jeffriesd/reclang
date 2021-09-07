@@ -1,0 +1,38 @@
+cabal-version:      2.4
+name:               reclang
+version:            0.1.0.0
+
+-- A short (one-line) description of the package.
+-- synopsis:
+
+-- A longer description of the package.
+-- description:
+
+-- A URL where users can report bugs.
+-- bug-reports:
+
+-- The license under which the package is released.
+-- license:
+author:             Daniel Jeffries
+maintainer:         jeffriesd@github.com
+
+extra-source-files: CHANGELOG.md
+
+library Interp
+    -- LANGUAGE extensions used by modules in this package.
+    -- other-extensions:
+    build-depends:   base ^>=4.14.1.0
+    hs-source-dirs:  src 
+    default-language: Haskell2010
+
+Test-Suite tests
+  default-language: Haskell2010
+  type:                exitcode-stdio-1.0
+  main-is:             TestMain.hs
+  hs-source-dirs:      test, src
+  other-modules: MyLexer, MyParser, Interp, Types, 
+                TestLexer, TestInterp, TestParser, TestData
+  build-depends:       base, 
+                       HUnit,
+                       test-framework,
+                       test-framework-hunit
