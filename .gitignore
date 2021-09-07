@@ -1,0 +1,6 @@
+# haskell files 
+*.hi
+*.o
+
+# local cabal file 
+*.local
